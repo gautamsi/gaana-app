@@ -1,0 +1,60 @@
+{
+    "name": "gaana-app",
+    "productName": "gaana-app",
+    "version": "1.0.0",
+    "description": "My Electron application description",
+    "main": "src/index.ts",
+    "scripts": {
+        "start": "electron-forge start",
+        "package": "electron-forge package",
+        "make": "electron-forge make",
+        "publish": "electron-forge publish",
+        "lint": "eslint src --color"
+    },
+    "keywords": [],
+    "author": "gsingh3",
+    "license": "MIT",
+    "config": {
+        "forge": {
+            "make_targets": {
+                "win32": [
+                    "squirrel"
+                ],
+                "darwin": [
+                    "zip"
+                ],
+                "linux": [
+                    "deb",
+                    "rpm"
+                ]
+            },
+            "electronPackagerConfig": {
+                "packageManager": "npm"
+            },
+            "electronWinstallerConfig": {
+                "name": "gaana_app"
+            },
+            "electronInstallerDebian": {},
+            "electronInstallerRedhat": {},
+            "github_repository": {
+                "owner": "",
+                "name": ""
+            },
+            "windowsStoreConfig": {
+                "packageName": "",
+                "name": "gaanaapp"
+            }
+        }
+    },
+    "dependencies": {
+        "electron": "^1.7.9",
+        "electron-compile": "^6.4.2",
+        "electron-squirrel-startup": "^1.0.0"
+    },
+    "devDependencies": {
+        "electron-forge": "^4.1.3",
+        "electron-prebuilt-compile": "1.7.9",
+        "tslint": "^5.8.0",
+        "typescript": "^2.6.1"
+    }
+}
